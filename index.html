@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Result &amp; Grade Calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container">
+    <header>
+      <h1>Student Result &amp; Grade Calculator</h1>
+      <p class="subtitle">Enter the student's name and marks (out of 100) in five subjects to calculate the academic result.</p>
+    </header>
+
+    <form id="resultForm" novalidate>
+      <div class="field">
+        <label for="studentName">Student Name</label>
+        <input type="text" id="studentName" placeholder="e.g. Aarav Sharma" autocomplete="off">
+        <span class="error" id="studentName-error"></span>
+      </div>
+
+      <div class="marks-grid">
+        <div class="field">
+          <label for="mark1">Mathematics</label>
+          <input type="text" inputmode="decimal" id="mark1" class="mark" placeholder="0 - 100" autocomplete="off">
+          <span class="error" id="mark1-error"></span>
+        </div>
+        <div class="field">
+          <label for="mark2">Science</label>
+          <input type="text" inputmode="decimal" id="mark2" class="mark" placeholder="0 - 100" autocomplete="off">
+          <span class="error" id="mark2-error"></span>
+        </div>
+        <div class="field">
+          <label for="mark3">English</label>
+          <input type="text" inputmode="decimal" id="mark3" class="mark" placeholder="0 - 100" autocomplete="off">
+          <span class="error" id="mark3-error"></span>
+        </div>
+        <div class="field">
+          <label for="mark4">Social Studies</label>
+          <input type="text" inputmode="decimal" id="mark4" class="mark" placeholder="0 - 100" autocomplete="off">
+          <span class="error" id="mark4-error"></span>
+        </div>
+        <div class="field">
+          <label for="mark5">Computer Science</label>
+          <input type="text" inputmode="decimal" id="mark5" class="mark" placeholder="0 - 100" autocomplete="off">
+          <span class="error" id="mark5-error"></span>
+        </div>
+      </div>
+
+      <div class="buttons">
+        <button type="submit" class="btn btn-primary">Calculate Result</button>
+        <button type="button" id="resetBtn" class="btn btn-secondary">Reset</button>
+      </div>
+    </form>
+
+    <section id="resultCard" class="result-card hidden" aria-live="polite">
+      <h2>Result Card</h2>
+      <p class="result-name" id="resName"></p>
+      <div class="result-stats">
+        <div class="stat"><span class="stat-label">Total Marks</span><span class="stat-value" id="resTotal"></span></div>
+        <div class="stat"><span class="stat-label">Percentage</span><span class="stat-value" id="resPercent"></span></div>
+        <div class="stat"><span class="stat-label">Average</span><span class="stat-value" id="resAverage"></span></div>
+        <div class="stat"><span class="stat-label">Grade</span><span class="stat-value" id="resGrade"></span></div>
+      </div>
+      <p class="status" id="resStatus"></p>
+    </section>
+
+    <section class="rules">
+      <h2>Grading Rules</h2>
+      <table>
+        <thead>
+          <tr><th>Percentage</th><th>Grade</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>90% and above</td><td>A+</td></tr>
+          <tr><td>80% - 89.99%</td><td>A</td></tr>
+          <tr><td>70% - 79.99%</td><td>B</td></tr>
+          <tr><td>60% - 69.99%</td><td>C</td></tr>
+          <tr><td>50% - 59.99%</td><td>D</td></tr>
+          <tr><td>40% - 49.99%</td><td>E</td></tr>
+          <tr><td>Below 40%</td><td>F</td></tr>
+        </tbody>
+      </table>
+      <p class="rule-note"><strong>Pass / Fail:</strong> A student passes only if every subject has at least 35 marks and the overall percentage is 40% or more. Otherwise the student fails and the grade is F.</p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
